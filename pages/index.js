@@ -2,10 +2,11 @@ import styled from "styled-components";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Image from "next/image";
+import Navbar from "../Components/Navbar";
 
 export const Title = styled.h1`
   text-align: center;
-  color: white;
+  color: white;s
   font-size: 50px;
   line-height: 0.2;
 `;
@@ -63,6 +64,10 @@ export const HomePage = () => {
         </Grid>
 
         <Grid item md={2}></Grid>
+
+        <Grid item md={12}>
+          <Navbar></Navbar>
+        </Grid>
       </Grid>
 
       <div>
