@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Name = styled.h2`
   color: teal;
-  font-size: 30px;
+  font-size: 40px;
   text-align: center;
 `;
 
