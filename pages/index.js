@@ -1,8 +1,11 @@
 import styled from "styled-components";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
+import styles from "../Components/styles.module.css";
 import Image from "next/image";
 import { Name } from "../Components/cityStyle";
+import Link from "next/link";
+
 import { Description } from "../Components/cityStyle";
 
 /// how do you import the styles for a div that are in one docuement
@@ -30,6 +33,22 @@ export const Logo = styled.img`
   width: 200px;
   height: 200px;
   margin-right: auto;
+`;
+
+export const StyledLink = styled.div`
+  color: white;
+  background-color: teal;
+  display: inline-block;
+  width: 19.5%;
+  text-align: center;
+  line-height: 3;
+`;
+
+const LayoutCenter = styled.div`
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
 `;
 
 const cities = [
@@ -68,7 +87,7 @@ export const HomePage = () => {
         </Grid>
       </Grid>
 
-      <div style={{ margin: "auto" }}>
+      <div>
         <Grid container spacing={3}>
           {cities.map((city) => (
             <Grid item md={4} key={city.id}>
@@ -76,16 +95,25 @@ export const HomePage = () => {
                 <Name> {city.name}</Name>
               </Paper>
               <Paper>
-                <Image
-                  src={city.image}
-                  width={500}
-                  height={400}
-                  alt={`image of ${city.name}`}
-                />
+                <LayoutCenter>
+                  <Image
+                    src={city.image}
+                    width={500}
+                    height={400}
+                    alt={`image of ${city.name}`}
+                  />{" "}
+                </LayoutCenter>
               </Paper>
 
               <Description>{city.description}</Description>
-              <Paper> </Paper>
+
+              <Paper>
+                <LayoutCenter>
+                  <StyledLink>
+                    <a href="/about">About Us</a>
+                  </StyledLink>
+                </LayoutCenter>
+              </Paper>
             </Grid>
           ))}
         </Grid>

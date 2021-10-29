@@ -1,18 +1,31 @@
 import Link from "next/link";
+import { myLink, Top } from "./navbarStyle";
 
 const Navbar = () => {
   return (
-    <nav>
-      <Link href="/">
-        <a>Home</a>
-      </Link>
-      <Link href="/cities">
-        <a>Cities</a>
-      </Link>
-      <Link href="/about">
-        <a>About Us</a>
-      </Link>
-    </nav>
+    <body>
+      <Top>
+        <myLink>
+          <Link href="/">
+            <a>Home</a>
+          </Link>
+        </myLink>
+
+        <myLink>
+          <Link href="/cities">
+            <a>Cities</a>
+          </Link>
+        </myLink>
+
+        <myLink>
+          <Link href="/about">
+            <a>About Us</a>
+          </Link>
+        </myLink>
+      </Top>
+    </body>
   );
 };
 export default Navbar;
+
+///why when I add body it works
